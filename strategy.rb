@@ -70,6 +70,14 @@ HTML_FORMATTER = lambda do |context|
   puts '</html>'
 end
 
+# class PlainTextFormatter now becomes dynamically created Proc
+report = Report.new do |context|
+  puts "**** #{context.title} ****"
+  context.text.each do |line|
+    puts line
+  end
+end
+
 # Generate report
 report = Report.new(&HTML_FORMATTER)
 report.output_report
