@@ -1,4 +1,4 @@
-# Strategy subclass
+# Strategy class 1
 class HTMLFormatter
   def output_report(context)
     puts '<html>'
@@ -14,7 +14,7 @@ class HTMLFormatter
   end
 end
 
-# Strategy subclass
+# Strategy class 2
 class PlainTextFormatter
   def output_report(context)
     puts "**** #{context.title} ****"
