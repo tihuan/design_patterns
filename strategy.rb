@@ -40,7 +40,15 @@ class Report
   end
 end
 
-# Same thing using Proc
+# Calling report
+report = Report.new(HTMLFormatter.new)
+report.output_report
+
+# now switch to plain,
+report.formatter = PlainTextFormatter.new
+report.output_report
+
+# *****Same thing using Proc*****
 class Report
   attr_reader :title, :text
   attr_accessor :formatter
