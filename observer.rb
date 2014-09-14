@@ -66,3 +66,18 @@ module Subject
     end
   end
 end
+
+class Employee
+  include Subject
+
+  attr_reader :name, :address
+  attr_reader :salary
+
+  def initialize(name, title, salary)
+    # call super explicitly with '()' to avoid sending arguments
+    super()
+    @name = name
+    @title = title
+    @salary = salary
+  end
+end
