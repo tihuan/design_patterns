@@ -81,3 +81,11 @@ class Employee
     @salary = salary
   end
 end
+
+# REMEMBER: Only notify observers when the updates are complete
+# Don't inform the observers just yet
+fred.salary = 1000000
+fred.title = 'Vice President of Sales'
+
+# Now inform the observers!
+fred.changes_complete
