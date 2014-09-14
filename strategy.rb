@@ -40,10 +40,6 @@ class Report
   end
 end
 
-# Generate report
-report = Report.new(&HTML_FORMATTER)
-report.output_report
-
 # Same thing using Proc
 class Report
   attr_reader :title, :text
