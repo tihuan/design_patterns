@@ -21,4 +21,12 @@ class Employee
       observer.update(self)
     end
   end
+
+  def add_observer(observer)
+    @observers << observer
+  end
+
+  def delete_observer(observer)
+    @observers.delete(observer)
+  end
 end
