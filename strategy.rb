@@ -1,10 +1,12 @@
 # Delegate!!!
+# Strategy abstract class
 class Formatter
   def output_report(title, text)
     raise "Abstract method called"
   end
 end
 
+# Strategy subclass
 class HTMLFormatter < Formatter
   def output_report(title, text)
     puts '<html>'
@@ -20,6 +22,7 @@ class HTMLFormatter < Formatter
   end
 end
 
+# Strategy subclass
 class PlainTextFormatter < Formatter
   def output_report(title, text)
     puts "**** #{title} ****"
