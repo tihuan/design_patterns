@@ -20,6 +20,7 @@ class Report
 end
 
 # Now we need two versions. HTML and plain text.
+# Define bunch of hook methods
 class Report
   def initialize
     @title = 'Monthly Report'
