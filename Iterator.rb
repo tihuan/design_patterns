@@ -1,7 +1,7 @@
+# ArrayIterator
 class ArrayIterator
-
   def initialize(array)
-    @array = array # Prefer @array = Array.new(array) for CHANGE RESIStENCE
+    @array = array
     @index = 0
   end
 
@@ -18,15 +18,4 @@ class ArrayIterator
     @index += 1
     value
   end
-end
-
-array = %w(a b c d e)
-iterator = ArrayIterator.new(array)
-# p iterator.item
-# p iterator.next_item
-# p iterator.next_item
-# p iterator.item
-# p iterator.item
-while iterator.has_next? #=> a, b, c, d, e
-  p iterator.next_item
 end
