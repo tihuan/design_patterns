@@ -59,6 +59,12 @@ class CompositeTask < Task
     @sub_tasks.each { |task| time += task.get_time_required }
     time
   end
+
+  def total_number_basic_tasks
+    total = 0
+    @sub_tasks.each { |task| total += task.total_number_basic_tasks }
+    total
+  end
 end
 
 # MakeBatter Task < CompositeTask
