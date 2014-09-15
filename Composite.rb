@@ -10,6 +10,10 @@ class Task
   def get_time_required
     0.0
   end
+
+  def total_number_basic_tasks
+    1
+  end
 end
 
 # two leaf classes
@@ -34,7 +38,6 @@ class MixTask < Task
 end
 
 # Composite task
-
 class CompositeTask < Task
   def initialize(name)
     super(name)
