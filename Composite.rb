@@ -54,6 +54,7 @@ class CompositeTask < Task
   def get_time_required
     time = 0.0
     @sub_tasks.each { |task| time += task.get_time_required }
+    time
   end
 end
 
