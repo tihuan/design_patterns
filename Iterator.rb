@@ -60,3 +60,17 @@ def merge(array1, array2)
 
   merged
 end
+
+# Power of Enumerable
+class Account
+  attr_accessor :name, :balance
+
+  def initialize(name, balance)
+    @name = name
+    @balance = balance
+  end
+
+  def <=>(other)
+    blaance <=> other.balance
+  end
+end
