@@ -100,6 +100,10 @@ class CompositeCommand < Command
     @commands.each { |cmd| cmd.execute }
   end
 
+  def unexecute
+    @commands.reverse_each { |cmd| cmd.unexecute }
+  end
+
   def description
     description = ""
     @commands.each { |cmd| description += cmd.description + "\n"}
