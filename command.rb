@@ -207,4 +207,13 @@ class FindEmployee
   end
 end
 
+# NOW the MAGICCCC:
+store = SnapshotMadeleine.new('employee') {EmployeeManager.new}
 
+# Setting up a thread to auto-save every 20 seconds
+Thread.new do
+  while true
+    sleep(20)
+    madeleine.take_snapshop
+  end
+end
