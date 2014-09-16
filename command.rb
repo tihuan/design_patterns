@@ -217,3 +217,17 @@ Thread.new do
     madeleine.take_snapshop
   end
 end
+
+tom = Employee.new('tom', '1001', '1 A street')
+harry = Employee.new('harry', '1002', '2 B street')
+
+# use Command object
+store.execute_command(AddEmployee.new(tom))
+store.execute_command(AddEmployee.new(harry))
+
+# Find employee
+store.execute_command(FindEmployee.new('1001'))
+store.execute_command(FindEmployee.new('1002'))
+
+# Change an address
+store.execute_command(ChangeAddress.new('1001'), 'My new address')
