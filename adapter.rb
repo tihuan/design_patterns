@@ -32,3 +32,26 @@ reader = File.open('message.txt')
 writer = File.open('message.encrypted', 'w')
 encrypter = Encrypter.new('my secret key')
 encrypter.encrypt(reader, writer)
+
+# Suppose that we want to support encrypting string..
+# We need to design interface for string to act as a IO object
+class StringIOAdapter
+  def initialize(string)
+    @string = string
+    @position = 0
+  end
+
+  def getc
+    if @position >= @string.length
+      raise EOFError
+    end
+    ch = @string[@position]
+    @position += 1
+    return ch
+  end
+
+  def eof?
+    return @position >= @string.length
+  end
+end
+
