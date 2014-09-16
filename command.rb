@@ -56,3 +56,16 @@ class DeleteFile < Command
     File.delete(@path)
   end
 end
+
+# new command subclass
+class CopyClass < Command
+  def initialize(source, target)
+    super("Copy file: #{source} to #{target}")
+    @source = source
+    @target = target
+  end
+
+  def execute
+    FileUtils.copy(@source, @target)
+  end
+end
