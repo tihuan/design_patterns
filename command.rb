@@ -57,6 +57,7 @@ class DeleteFile < Command
   end
 
   def execute
+    # Check file existence before save contents
     if File.exists?(@path)
       @contents = File.read(@path)
     end
