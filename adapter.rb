@@ -26,3 +26,9 @@ end
 
 # Decrypt
 # c ^ b = 0011 1100 = a
+
+# In action
+reader = File.open('message.txt')
+writer = File.open('message.encrypted', 'w')
+encrypter = Encrypter.new('my secret key')
+encrypter.encrypt(reader, writer)
