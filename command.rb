@@ -9,3 +9,11 @@ class SlickButton
     @command.execute if @command
   end
 end
+
+class SaveCommand
+  def execute
+    # Save the current document
+  end
+end
+
+save_button = SlickButton.new(SaveCommand.new)
