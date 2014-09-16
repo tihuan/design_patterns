@@ -163,3 +163,15 @@ class EmployeeManager
     @employee[number]
   end
 end
+
+# Build Command objects to act as API to talk with EmployeeManager objects
+class AddEmployee
+  def initialize(employee)
+    @employee = employee
+  end
+
+# system here is an EmployeeManager object
+  def execute(system)
+    system.add_employee(@employee)
+  end
+end
