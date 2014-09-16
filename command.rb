@@ -58,7 +58,7 @@ class DeleteFile < Command
 end
 
 # new command subclass
-class CopyClass < Command
+class CopyFile < Command
   def initialize(source, target)
     super("Copy file: #{source} to #{target}")
     @source = source
@@ -90,3 +90,13 @@ class CompositeCommand < Command
     description
   end
 end
+
+# CompositeCommand example
+cmds = CompositeCommand.new
+
+cmds.add_command(CreateFile.new('file1.txt', "hello world\n"))
+cmds.add_command(CopyFile.new('file1.txt', 'file2.txt'))
+cmds.add_command(DeleteFile.new('file1.txt'))
+
+cmds.execute
+puts cmds.description
